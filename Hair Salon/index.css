@@ -1,0 +1,82 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+}
+
+nav{
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: #85827f;
+}
+
+.gif{
+    height: 234px;
+    width: 100%;
+}
+
+.quote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.attributes{
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+    position: relative; /* add this to ensure that the section is positioned relative to the entire page */
+    
+}
+
+.quote h1{
+    font-size: 3rem;
+    margin: 0;
+}
+
+.quotes{
+    height: 320px;
+    background: #221F20;
+    color: #CDB69E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 0.8em;
+    
+}
+
+.quotes h3{
+    color: white;
+    font-family: 'Caveat', cursive;
+}
+
+.quotes hr {
+    height: 4.5px;
+    width: 110px;
+    border: none;
+    background: #85827f;
+}
