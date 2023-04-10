@@ -1,6 +1,5 @@
 body{
     font-family: 'Source Sans Pro', sans-serif;
-    max-width: 500px;
     
 }
 
@@ -46,23 +45,20 @@ p{
     margin-left: 10px; 
 }
 
-.hero{
-    position: relative;
-}
+
 
 .hero-image {
     height: 293px;
     width: 100%;
     margin-top: 59px;
     margin-bottom: 25px;
+    position: relative;
 }
 
 .title {
     position: absolute;
     left: 0;
-    top:7em;
-    right:0;
-    bottom:0;
+    top: 7em;
     margin-left: 1em;
     color: white;
     max-width: 400px;
@@ -78,6 +74,12 @@ p{
 
 .content img{
     width: 100%;
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     
 }
 
@@ -97,6 +99,7 @@ footer{
     color: white;
     background-color: #202020 ;
     height: 100px;
+    
 }
 
 footer p{
@@ -114,21 +117,13 @@ a{
 }
 
 
-
-
-
-
+/* ! Here are styles for the "About Me" Page. */
 
 
 
 .profilepic{
     margin: 70px 1em 1em;
 }
-
-.here{
-    max-width: 350px;
-}
-
 
 
 span{
@@ -154,4 +149,30 @@ span{
 .content h1{
     font-size: 1.65rem;
     margin: 0;
+}
+
+
+
+/* ! From here Pc optimization starts */
+
+
+@media (min-width: 800px){
+    
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            'img img img'
+            'date date date'
+            'title title title'
+            'subtitle subtitle subtitle'
+        ;
+    }
+    
+    
+
+    img{grid-area: img;}
+    h5{grid-area: date;}
+    h1{grid-area: title;}
+    p{grid-area: subtitle;}
 }
