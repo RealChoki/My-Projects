@@ -29,3 +29,5 @@ view.addEventListener("click", () =>{
   document.getElementById("last-blog").style.marginBottom = "40px"
   document.getElementById("feed").innerHTML = feedHtml
 })
+
+//! nice
