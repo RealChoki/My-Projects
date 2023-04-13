@@ -87,7 +87,7 @@ p{
     font-weight: bolder;
     border-bottom: 2px solid black;
     display: block;
-    margin: 40px auto;
+    margin: 0 auto  40px;
     width: fit-content;
 }
 
@@ -114,6 +114,17 @@ a{
     text-decoration: none;
     color: black;
     margin-right: 0.5em;
+}
+
+button{
+    border: none;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+button:hover{
+    cursor: pointer;
 }
 
 
@@ -158,15 +169,23 @@ span{
 
 @media (min-width: 800px){
     
-    .grid-container{
+    section{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
-            'img img img'
-            'date date date'
-            'title title title'
-            'subtitle subtitle subtitle'
+            "img"
+            "date"
+            "title"
+            "subtitle"
         ;
+        
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "section section section"
     }
     
     
@@ -175,4 +194,5 @@ span{
     h5{grid-area: date;}
     h1{grid-area: title;}
     p{grid-area: subtitle;}
+    section{grid-area: section;}
 }
