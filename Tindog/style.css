@@ -33,15 +33,30 @@ header {
 
 .text{
     position: absolute;
-    top: 660px;
+    top: 710px;
     bottom: 0;
-    left: 0;
+    left: 10px;
     margin: 0;
 }
 
 .text h2{
     font-weight: 400;
     color: #B7B7B7;
+    margin-top: 0;
+}
+
+.text h1{
+    margin-bottom: 4px;
+}
+
+.popup{
+    width: 230px;
+    height: 115px;
+    position: absolute;
+    top: 140px;
+    left: 20px;
+    margin: 0;
+    transform: rotate(-30deg);
 }
 
 .like-dislike {
@@ -60,6 +75,16 @@ header {
     right: 0;
     bottom: 0;
     margin: auto;
+}
+
+.disliked:hover{
+    background-color: #FFE7EF;
+    cursor: pointer;
+}
+
+.liked:hover{
+    background-color: #DBFFF4;
+    cursor: pointer;
 }
 
 footer{
