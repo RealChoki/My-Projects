@@ -4,6 +4,7 @@ body, html{
     width: 550px;
     color: white;
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(#ffffff, #F6F7FB)
     
 }
 
@@ -73,8 +74,8 @@ header {
     height: 91px;
     border-radius: 50%;
     position: relative;
-    box-shadow: 0px 0px 4px gray;
-
+    box-shadow: 0px 10px 20px #E9E9EA;
+    background-color: #ffffff;
 }
 
 .like-dislike img {
