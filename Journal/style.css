@@ -148,7 +148,7 @@ span{
 }
 
 .space{
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .recent{
@@ -161,8 +161,6 @@ span{
     font-size: 1.65rem;
     margin: 0;
 }
-
-
 
 /* ! From here Pc optimization starts */
 
