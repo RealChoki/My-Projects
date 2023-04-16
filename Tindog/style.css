@@ -1,5 +1,5 @@
 body, html{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     width: 550px;
     color: white;
@@ -27,15 +27,17 @@ header {
 
 .big{
     width: 550px;
-    position: relative;
     border-radius: 15px;
+}
+
+#feed {
+    position: relative;
 }
 
 .text{
     position: absolute;
-    top: 710px;
-    bottom: 0;
-    left: 10px;
+    bottom: 10px;
+    left: 20px;
     margin: 0;
 }
 
@@ -51,12 +53,19 @@ header {
 
 .popup{
     width: 230px;
-    height: 115px;
     position: absolute;
-    top: 140px;
+    top: 60px;
     left: 20px;
     margin: 0;
     transform: rotate(-30deg);
+}
+
+#likepop {
+    display: none;
+}
+
+#dislikepop{
+    display: none;
 }
 
 .like-dislike {
@@ -94,3 +103,4 @@ footer{
     gap: 24px;
     height: 140px;
 }
+
