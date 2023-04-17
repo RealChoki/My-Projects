@@ -1,6 +1,7 @@
-body{
+body, html{
     font-family: 'Source Sans Pro', sans-serif;
-    
+    margin: 0;
+    padding: 0;
 }
 
 nav {
@@ -77,12 +78,6 @@ p{
 }
 
 
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    
-}
-
 .view{
     font-weight: bolder;
     border-bottom: 2px solid black;
@@ -154,7 +149,7 @@ span{
 .recent{
     text-align: center;
     font-weight: bolder;
-    margin: 0 0 1.5em;
+    margin: 0 0 2.5em;
 }
 
 .content h1{
@@ -162,35 +157,64 @@ span{
     margin: 0;
 }
 
+
 /* ! From here Pc optimization starts */
 
 
-@media (min-width: 800px){
+@media (min-width: 768px){
     
-    section{
+    .grid{
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
-            "img"
-            "date"
-            "title"
-            "subtitle"
-        ;
-        
+        grid-template-columns: 1fr 1fr 1fr
     }
 
-    .container{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "section section section"
-    }
-    
-    
+   .hero-image{
+        min-height:370px;
+        max-height:400px
+   }
 
-    img{grid-area: img;}
-    h5{grid-area: date;}
-    h1{grid-area: title;}
-    p{grid-area: subtitle;}
-    section{grid-area: section;}
+    footer{
+        margin-top: 85px;
+    }
+
+  .container{
+        margin-top: 50px;
+    }
+
+    .profileandtext{
+        display: flex;
+    }
+
+    .profiletext{
+        margin-top: 105px;
+    }
+
+    .space{
+        margin:0px 120px
+    }
+
+    .view{
+        margin-top: 50px;
+    }
+
+    .container section{
+        margin-top: 50px;
+    }
+
+    
+    .profileandtext,
+    section 
+        {
+        max-width: 1021px;
+        margin: 0 auto;
+    }
+
+    .grid{
+        max-width: 1380px;
+        margin: 0 auto;
+    }
+
+    p{
+        font-size: 1rem;
+    }
 }
