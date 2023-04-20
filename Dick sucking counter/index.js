@@ -1,15 +1,20 @@
-let saveEl = document.getElementById("save-el")
-let countEl = document.getElementById("count-el")
 let count = 0
 
-function increment() {
+document.getElementById("increment-btn").addEventListener("click",()=>{
     count += 1
-    countEl.textContent = count
-}
+    document.getElementById("count-el").textContent = count
+}) 
 
-function save() {
-    let countStr = count + " - "
-    saveEl.textContent += countStr
-    countEl.textContent = 0
+document.getElementById("save-btn").addEventListener("click",()=>{
+    let saveEl = document.getElementById("save-el")
+    const countStr = count
+    if( saveEl.textContent === "Previous amount of dicks sucked:"){
+        saveEl.textContent += ` ${countStr} `
+    } else{
+        saveEl.textContent += `- ${countStr} `
+    }
+    document.getElementById("count-el").textContent = 0
     count = 0
-}
+})
+
+
