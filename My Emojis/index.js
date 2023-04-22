@@ -10,7 +10,6 @@ function renderEmojis() {
     }
 }
 
-renderEmojis()
 
 const pushBtn = document.getElementById("push-btn")
 pushBtn.addEventListener("click", function(){
@@ -43,3 +42,5 @@ shiftBtn.addEventListener("click", function(){
     myEmojis.shift()
     renderEmojis()
 })
+
+renderEmojis()
