@@ -1,3 +1,12 @@
-fetch ("https://www.thecolorapi.com/id?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=html")
+fetch ("https://www.thecolorapi.com/scheme?hex=24B1E0&mode=triad&count=6 || /scheme?rgb=rgb(0,71,171)")
     .then (res => res.json())
-    .then (data => console.log(data))
+    .then (data => {
+        console.log(data)
+        document.getElementById("feed").innerHTML = `
+            <img src="${data}">
+        
+        
+        `
+
+
+    })
