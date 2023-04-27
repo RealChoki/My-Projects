@@ -3,10 +3,14 @@ fetch ("https://www.thecolorapi.com/scheme?hex=24B1E0&mode=triad&count=6 || /sch
     .then (data => {
         console.log(data)
         document.getElementById("feed").innerHTML = `
-            <img src="${data}">
+           <img src="${data}">
         
         
         `
 
 
     })
+
+document.getElementById("btn").addEventListener("click", () => {
+    console.log("Clicked")
+})
