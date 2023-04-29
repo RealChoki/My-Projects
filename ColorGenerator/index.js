@@ -1,16 +1,16 @@
-fetch ("https://www.thecolorapi.com/scheme?hex=24B1E0&mode=triad&count=6 || /scheme?rgb=rgb(0,71,171)")
-    .then (res => res.json())
-    .then (data => {
-        console.log(data)
-        document.getElementById("feed").innerHTML = `
-           <img src="${data}">
-        
-        
-        `
-
-
+fetch("https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,34%&cmyk=100,58,0,33&format=json&mode=analogic&count=6")
+    .then((res) => res.json())
+    .then((data) => {
+        document.getElementById("btn").addEventListener("click", () => {
+           data.mode =  document.getElementById("color-schemes").value
+           data.colors = document.getElementById("selected-color").value
+           const hexValue = data.seed.hex.value
+           console.log(hexValue.hex)
+           document.getElementById("feed").innerHTML = `
+           
+            <p class="color-code">${hexValue}</p>
+           
+           
+           `
+        })
     })
-
-document.getElementById("btn").addEventListener("click", () => {
-    console.log("Clicked")
-})
