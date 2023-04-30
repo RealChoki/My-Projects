@@ -5,7 +5,7 @@ html, body {
     font-family: 'Inter', sans-serif;
 }
 
-.color{
+.selected-color{
     height: 42px;
     width: 61px;
 }
@@ -37,4 +37,19 @@ header{
     height: 90px;
     justify-content: center;
     align-items: center;
+}
+
+p{
+    color: #D5D4D8;
+    text-align: center;
+}
+
+.color{
+    height: 400px;
+    width: 110px;
+}
+
+section{
+    display: flex;
+    margin-left: ;
 }

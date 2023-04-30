@@ -2,15 +2,32 @@ fetch("https://www.thecolorapi.com/scheme?hex=0047AB&rgb=0,71,171&hsl=215,100%,3
     .then((res) => res.json())
     .then((data) => {
         document.getElementById("btn").addEventListener("click", () => {
-           data.mode =  document.getElementById("color-schemes").value
-           data.colors = document.getElementById("selected-color").value
-           const hexValue = data.seed.hex.value
+           
+           console.log(data)
+           const hexValue = data.colors
            console.log(hexValue.hex)
            document.getElementById("feed").innerHTML = `
            
-            <p class="color-code">${hexValue}</p>
-           
-           
+            <div class="color-field">
+                <img class="color" src=${hexValue[0].image.bare}>
+                <p class="color-code">${hexValue[0].hex.value}</p>
+            </div>
+            <div class="color-field">
+                <img class="color" src=${hexValue[1].image.bare}>
+                <p class="color-code">${hexValue[1].hex.value}</p>
+            </div>
+            <div class="color-field">
+                <img class="color" src=${hexValue[2].image.bare}>
+                <p class="color-code">${hexValue[2].hex.value}</p>
+            </div>
+            <div class="color-field">
+                <img class="color" src=${hexValue[3].image.bare}>
+                <p class="color-code">${hexValue[3].hex.value}</p>
+            </div>
+            <div class="color-field">
+                <img class="color" src=${hexValue[4].image.bare}>
+                <p class="color-code">${hexValue[4].hex.value}</p>
+            </div>
            `
         })
     })
