@@ -1,4 +1,4 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
     color: black;
@@ -7,7 +7,6 @@ html, body {
     display: block;
     margin: 0px auto;
     font-family: 'Source Sans Pro', sans-serif;
-
 }
 
 
@@ -24,7 +23,11 @@ header{
     justify-content: space-between;
     align-items: center;
     height: 67px;
+    width: 375px;
     border-bottom: 2px solid #C6C6C6;
+    position: fixed;
+    top: 0;
+    background-color: white;
 }
 .avatar{
     height: 34px;
@@ -111,9 +114,10 @@ img:hover{
     cursor: pointer;
 }
 
-img:hover{
-    border-bottom: 1px solid black;
+.top {
+    margin-top: 68px;
 }
+
 
 
 
