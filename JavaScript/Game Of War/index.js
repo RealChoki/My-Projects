@@ -37,7 +37,9 @@ drawCardBtn.addEventListener("click", () => {
             
             if (data.remaining === 0) {
                 drawCardBtn.disabled = true   
-                computerScore > myScore ? header.textContent = "The computer won the game ):" : computerScore < myScore ? header.textContent = "You won the game (:" : "It's a tie game O:"
+                computerScore > myScore ? header.textContent = "The computer won the game ):" : 
+                computerScore < myScore ? header.textContent = "You won the game (:" : 
+                "It's a tie game O:"
             } 
                 
             
