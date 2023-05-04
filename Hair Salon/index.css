@@ -3,6 +3,7 @@ body{
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
+    background-color: #221F20;
 }
 
 .logo{
@@ -15,6 +16,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 i{
@@ -52,14 +54,16 @@ header {
     
 }
 
-.quote h1{
-    font-size: 3rem;
-    margin: 0;
+.quotes > h2{
+    font-size: 1.25rem;
+}
+
+.quotes > h3{
+    font-size: 0.87rem;
 }
 
 .quotes{
-    height: 320px;
-    background: #221F20;
+    height: 234px;
     color: #CDB69E;
     display: flex;
     flex-direction: column;
@@ -75,8 +79,60 @@ header {
 }
 
 .quotes hr {
-    height: 4.5px;
+    height: 4px;
     width: 110px;
     border: none;
     background: #85827f;
+}
+
+.main{
+    height: 612px;
+    background-color:#E8DDD1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service{
+    color: black;
+    font-size: 1.125rem;
+    font-weight: bold;
+    border-bottom: 3px solid #85827F;
+    margin-top: 45px;
+    margin-bottom: 17px;
+}
+
+.manuel{
+    font-size: 0.75rem;
+    width: 260px;
+    color: black;
+    font-weight: bold;
+}
+
+.large{
+    font-size: 6rem;
+}
+
+h5{
+    margin: 10px;
+    border-bottom: 3px solid white;
+    padding: 0;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+a{
+    background-color: black;
+    font-weight: bold;
+    padding: 7px 17px;
+    letter-spacing: 0.1em;
+    margin-top: 33px;
+    text-decoration: none;
+    color: white;
+
+}
+
+h1{
+    margin: 10px 0px;
 }
