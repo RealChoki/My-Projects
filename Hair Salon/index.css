@@ -4,6 +4,7 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
     background-color: #221F20;
+    
 }
 
 .logo{
@@ -137,65 +138,79 @@ h1{
     margin: 10px 0px;
 }
 
-* {box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
+/* Everything slider from now on. */
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+.pictures{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+.slider {
+    width: 100%;
+    height: 240px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+.slides {
+    width: 500%;
+    height: 240px;
+    display: flex;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+.slides > input{
+    display: none;
 }
 
-.active {
-  background-color: #717171;
+.slide{
+    width: 20%;
+    transition: 2s;
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.slide > img{
+    width: 100%;
+    height: 240px;
 }
 
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
+/* manual slide animation */
+
+.navigation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
+.manual-btn{
+    border: 3.5px solid #E8DDD1;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: #E8DDD1;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
 }
