@@ -61,11 +61,11 @@ header {
     transform: rotate(-30deg);
 }
 
-#likepop {
+#like-pop {
     display: none;
 }
 
-#dislikepop{
+#dislike-pop{
     display: none;
 }
 

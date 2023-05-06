@@ -11,20 +11,20 @@ function getNewDog(){
 }
 
 
-function actOnBtnPress(btnid , popupid){
-    document.getElementById(btnid).addEventListener('click', function(){
+function actOnBtnPress(btnId , popupId){
+    document.getElementById(btnId).addEventListener('click', function(){
         if (!isWaiting) {
-            isWaiting = true;
-            handleSwipe(popupid);
+            isWaiting = true
+            handleSwipe(popupId)
             setTimeout(() => {
-                isWaiting = false;
-            }, 1000);
+                isWaiting = false
+            }, 1000)
         }
     })
 }
 
-function handleSwipe(popupid){
-    document.getElementById(popupid).style.display = "block"
+function handleSwipe(popupId){
+    document.getElementById(popupId).style.display = "block"
     
     if(dogs.length > 1){
         setTimeout(()=> {

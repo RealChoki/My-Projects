@@ -9,8 +9,8 @@ class dog {
         const {name, avatar, age, bio} = this
         return `
             <img class="big" src=${avatar}>
-            <img id="likepop" class="popup" src="images/badge-like.png">
-            <img id="dislikepop" class="popup" src="images/badge-nope.png">
+            <img id="like-pop" class="popup" src="images/badge-like.png">
+            <img id="dislike-pop" class="popup" src="images/badge-nope.png">
             <div class="text">
                 <h1>${name}, ${age}</h1>
                 <h2>${bio}</h2>
