@@ -211,3 +211,39 @@ h1{
 #radio4:checked ~ .first{
     margin-left: -60%;
 }
+/*Automatic navigation*/
+
+.navigation-auto{
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.navigation-auto div{
+    border: 2px solid #E8DDD1;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #E8DDD1;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #E8DDD1;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #E8DDD1;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #E8DDD1;
+}
