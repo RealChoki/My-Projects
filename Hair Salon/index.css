@@ -247,3 +247,22 @@ h1{
 #radio4:checked ~ .navigation-auto .auto-btn4{
     background: #E8DDD1;
 }
+
+/*Slide stops */
+
+.faq{
+    background-color: #F0F4F7;
+    color: #221F20;
+}
+
+.faq-list {
+    list-style: none; /* Removes the default bullets */
+    padding-left: 1em; /* Adds some left padding to the list */
+}
+
+.faq-list li:before {
+    content: "+"; /* Replaces the bullets with plus signs */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; /* Positions the plus sign to the left of the list item */
+}
