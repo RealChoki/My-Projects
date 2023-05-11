@@ -4,7 +4,7 @@ body{
     font-family: 'Source Sans Pro', sans-serif;
     color: white;
     background-color: #221F20;
-    
+
 }
 
 .logo{
@@ -146,7 +146,6 @@ h1{
 .slider {
     width: 100%;
     height: 240px;
-    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -253,16 +252,32 @@ h1{
 .faq{
     background-color: #F0F4F7;
     color: #221F20;
+    height: 207px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .faq-list {
-    list-style: none; /* Removes the default bullets */
-    padding-left: 1em; /* Adds some left padding to the list */
+    list-style: none; 
+    padding-left: 1em; 
+    margin-left: 20px;
+    
 }
 
 .faq-list li:before {
-    content: "+"; /* Replaces the bullets with plus signs */
+    content: "+"; 
     display: inline-block;
     width: 1em;
-    margin-left: -1em; /* Positions the plus sign to the left of the list item */
+    margin-left: -1em; 
+}
+
+li{
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.faq > h1{
+    margin: 0 auto;
+    margin-top: 30px;
 }
