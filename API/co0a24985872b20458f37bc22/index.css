@@ -25,10 +25,12 @@ html, body {
 .search-field{
     background-color: #2E2E2F;
     border: none;
-    padding: 9px 13px;
+    padding: 9px 40px;
     width: 342px;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
+    position: relative;
+    color: #A5A5A5;
 
 }
 
@@ -49,4 +51,11 @@ html, body {
     left: 70;
     right: 0;
     bottom: 0;
+    
+}
+
+.search-icon{
+    position: absolute;
+    left: 15px;
+    top: 10px;
 }
