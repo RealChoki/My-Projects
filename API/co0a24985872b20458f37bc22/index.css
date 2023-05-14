@@ -62,15 +62,30 @@ html, body {
     top: 10px;
 }
 
-section h4{
+.placeholder-search h4{
     color: #2E2E2F;
     margin-top: 8.75px;
 }
 
-section {
+.placeholder-search {
     position: absolute;
     top: 60%;
     left: 0;
     width: 100%;
     text-align: center;
+}
+#feed{
+    display: flex;
+    gap: 21px;    
+    position: absolute;
+    top: 43%;
+    left: 6%;
+}
+
+#feed img{
+    width: 20vw;
+}
+
+.hide{
+    display: none;
 }
