@@ -82,10 +82,56 @@ html, body {
     left: 6%;
 }
 
-#feed img{
+#feed > img{
     width: 20vw;
 }
 
 .hide{
     display: none;
 }
+
+.row{
+    display: flex;
+}
+
+.row h5,h3,h6{
+    margin: 8px 0px;
+}
+
+h6{
+    margin-bottom: 0px;
+    margin-top: 14px;
+}
+
+.row img{
+    height: 15px;
+    width: 15px;
+    
+}
+
+.plot{
+    color:#A5A5A5;
+    margin-top: 11px;
+    max-width: 400px;
+}
+
+.first{
+    gap: 7px;
+}
+.first img{
+    margin-top: 11px;
+}
+
+.secound{
+    gap: 16px;
+}
+
+.secound img{
+    margin-top: 7px;
+}
+
+.watchlist{
+    display: flex;
+    gap:4px;
+}
+
