@@ -116,14 +116,19 @@ h6{
 }
 
 .first{
-    gap: 7px;
+    gap: 10px;
 }
 .first img{
     margin-top: 11px;
 }
 
+.rating{
+    display: flex;
+    gap: 2px;
+}
+
 .secound{
-    gap: 16px;
+    gap: 18px;
 }
 
 .secound img{
@@ -132,6 +137,6 @@ h6{
 
 .watchlist{
     display: flex;
-    gap:4px;
+    gap: 4px;
 }
 

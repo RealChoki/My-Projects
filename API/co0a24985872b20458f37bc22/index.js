@@ -14,8 +14,10 @@ document.getElementById("search-btn").addEventListener("click", ()=>{
                         <div>
                             <div class="first row">
                                 <h3>${Title}</h3>
-                                <img src="images/star.png">
-                                <h6>${imdbRating}</h6>
+                                <div class="rating">
+                                    <img src="images/star.png">
+                                    <h6>${imdbRating}</h6>
+                                </div>
                             </div>
                             <div class="secound row">
                                 <h5>${Runtime}</h5>
