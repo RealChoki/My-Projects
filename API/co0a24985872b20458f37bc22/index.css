@@ -76,14 +76,16 @@ html, body {
 }
 #feed{
     display: flex;
+    flex-direction: column;
     gap: 21px;    
     position: absolute;
     top: 43%;
     left: 6%;
 }
 
-#feed > img{
-    width: 20vw;
+.poster{
+    width: 15vw;
+    margin-right: 20px;
 }
 
 .hide{
@@ -134,9 +136,13 @@ h6{
 .secound img{
     margin-top: 7px;
 }
-
+                           
 .watchlist{
     display: flex;
     gap: 4px;
 }
 
+.movie{
+    display: flex;
+
+}
