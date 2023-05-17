@@ -3,6 +3,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
     fetch(`http://www.omdbapi.com/?apikey=a80cae51&s=${document.getElementById("search-field").value}`)
         .then(res => res.json())
         .then(data => {
+            data.Response == "False" ? document.getElementById("feed").innerHTML = `<h1 class="false">Unable to find what you’re looking for. Please try another search.</h1>` : 
             console.log(data);
             for (let i = 0; i < 10; i++) {
                 const imdbID = data.Search[i].imdbID;

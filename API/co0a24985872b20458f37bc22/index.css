@@ -74,7 +74,7 @@ html, body {
     width: 100%;
     text-align: center;
 }
-#feed{
+.feed{
     display: flex;
     flex-direction: column;
     gap: 21px;    
@@ -146,3 +146,17 @@ h6{
     display: flex;
 
 }
+
+.false {
+    position: fixed;
+    color: #787878;
+    font-weight: 700;
+    font-size: 1.125rem;
+    width: 335px;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
