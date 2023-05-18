@@ -171,6 +171,7 @@ h6{
 
 #add-btn, 
 #delete-btn, 
+#add-movie,
 .search-btn{
     cursor: pointer;
 }
@@ -195,4 +196,8 @@ h2{
     height: 15px;
     margin-bottom: 4px;
     
+}
+
+.show{
+    display: inline;
 }

@@ -81,15 +81,25 @@ watchList.addEventListener("click", () => {
 
 feed.addEventListener("click", (e) => {
     if (e.target.id == "delete-btn"){
-        e.target.closest(".movie").remove()
+        const movieElement = e.target.closest(".movie");
+        const movieTitle = movieElement.querySelector("h3").textContent;
+        listOfMovies = listOfMovies.filter(movie => movie.title !== movieTitle);
+        movieElement.remove()
+    }else if (e.target.id == "add-movie"){
+        feed.innerHTML = ""
+        watchList.textContent = "my Watchlist"
+        document.getElementById("title").textContent = "Find your film"
+        document.querySelector(".placeholder-search").classList.remove("hide")
+        document.querySelector(".search").classList.remove("hide")
+        document.querySelector(".false").classList.add("hide")
     }
     feed.querySelectorAll(".movie").length == 0 ? feed.innerHTML = `
     <h1 class="false">Your watchlist is looking a little empty...</h1>
     <div class="go-add-movies">
-        <img src="images/plus.png">
+        <img id="add-movie" src="images/plus.png">
         <h2>Let’s add some movies!</h2>
     </div>
-    `: null 
+    `: null
 })
 
 feed.addEventListener("click", (e) => {
@@ -106,4 +116,5 @@ feed.addEventListener("click", (e) => {
         listOfMovies.push(movie);
     }
 })
+
 
