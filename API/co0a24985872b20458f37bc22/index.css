@@ -41,7 +41,6 @@ html, body {
     border: none;
     width: 120px;
     padding: 9px 13px;
-    cursor: pointer;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
 }
@@ -144,7 +143,8 @@ h6{
 
 .movie{
     display: flex;
-
+    padding-bottom: 25px;
+    border-bottom: 3px solid #E5E7EB;
 }
 
 .false {
@@ -160,3 +160,39 @@ h6{
 
 }
 
+#watch-list{
+    text-decoration: none;
+    color: inherit;
+}
+
+.movie:last-child{
+    border-bottom: none;
+}
+
+#add-btn, 
+#delete-btn, 
+.search-btn{
+    cursor: pointer;
+}
+
+.go-add-movies{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 7px;
+}
+
+h2{
+    font-size: 0.87rem;
+    color: inherit;
+}
+
+.go-add-movies img{
+    width: 15px;
+    height: 15px;
+    margin-bottom: 4px;
+    
+}
