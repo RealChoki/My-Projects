@@ -10,6 +10,7 @@ html, body {
     width: 100%;
     position: relative;
     height: 36vh;
+    min-width: 700px;
 }
 
 .header-text{
@@ -21,6 +22,7 @@ html, body {
     left: 0;
     right: 0;
     margin: 0px 46px;
+    min-width: 600px;
 }
 
 .search-field{
@@ -32,6 +34,8 @@ html, body {
     border-bottom-left-radius: 6px;
     position: relative;
     color: #A5A5A5;
+    min-width: 370px;
+    max-width: 650px;
 
 }
 
@@ -51,7 +55,6 @@ html, body {
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    
 
 }
 
@@ -85,6 +88,8 @@ html, body {
 .poster{
     width: 15vw;
     margin-right: 20px;
+    min-width: 130px;
+    max-width: 220px;
 }
 
 .hide{
@@ -145,6 +150,7 @@ h6{
     display: flex;
     padding-bottom: 25px;
     border-bottom: 3px solid #E5E7EB;
+    min-width: 560px;
 }
 
 .false {
@@ -201,3 +207,36 @@ h2{
 .show{
     display: inline;
 }
+
+@media (min-width: 1000px){
+    .first h3,
+    .secound h5,
+    .plot {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    #add-btn{
+        margin-top: 10px;
+    }
+    
+    #title{
+        font-size: 2.4rem;
+    }
+
+    #watch-list{
+        font-size: 1.2rem;
+    }
+
+    .search-field{
+        padding: 12px 40px;
+    }
+    .search-icon{
+        margin-top: 3px;
+    }
+}
+
