@@ -3,33 +3,22 @@ const allCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 
 const passwordLength = 12
 
-let generateButton = document.getElementById("gen-btn")
-let generatePassword1 = document.getElementById("secound-Btn")
-let generatePassword2 = document.getElementById("third-Btn")
-
-generateButton.addEventListener("click", function(){
-
-function getRandomCharacter(){
-    let randomCharacter = Math.floor(Math.random()* allCharacters.length)
-    return allCharacters [randomCharacter]
-}
-    
-function getRandomPassword(){
-    let randomPassword = ""
-    for (let i = 0; i < passwordLength; i++){
-    randomPassword += getRandomCharacter() 
+document.getElementById("gen-btn").addEventListener("click", function(){
+    function getRandomCharacter(){
+        let randomCharacter = Math.floor(Math.random()* allCharacters.length)
+        return allCharacters [randomCharacter]
     }
-    return randomPassword
-}
-    generatePassword1.textContent = getRandomPassword()
-    generatePassword2.textContent = getRandomPassword()
-    
+    function getRandomPassword(){
+        let randomPassword = ""
+        for (let i = 0; i < passwordLength; i++){
+        randomPassword += getRandomCharacter() 
+        }
+        return randomPassword
+    }
+    document.getElementById("secound-Btn").textContent = getRandomPassword()
+    document.getElementById("third-Btn").textContent = getRandomPassword()
 })
 
-generatePassword1.addEventListener("click", function(){
-    generatePassword1.ariaSelected()
-    generatePassword1.selectionRange
-})
 
 
 
