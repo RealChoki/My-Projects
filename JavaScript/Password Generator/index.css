@@ -55,9 +55,12 @@ button{
     border-radius: 6px;
     font-weight: bold;
     border: none;
+    cursor: pointer;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
-#secound-Btn{
+#secound-Btn, #third-Btn{
     background-color:rgba(255, 255, 255, 0.897);
     color: #9161a0;
     border: none;
@@ -67,12 +70,12 @@ button{
     
 }
 
-#third-Btn{
-    background-color: rgba(255, 255, 255, 0.897);
-    color: #9161a0;
-    border: none;
-    margin-right: 8px;
-    margin-left: 8px;
-    padding: 12px 50px;
-    text-align: center;
-}
+@keyframes buttonAnimation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  .button-clicked {
+    animation-name: buttonAnimation;
+  }

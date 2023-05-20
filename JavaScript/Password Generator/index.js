@@ -2,8 +2,9 @@ const allCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 "/"];
 
 const passwordLength = 12
+const secoundBtn = document.getElementById("secound-Btn")
 
-document.getElementById("gen-btn").addEventListener("click", function(){
+document.getElementById("gen-btn").addEventListener("click", () => {
     function getRandomCharacter(){
         let randomCharacter = Math.floor(Math.random()* allCharacters.length)
         return allCharacters [randomCharacter]
@@ -15,11 +16,18 @@ document.getElementById("gen-btn").addEventListener("click", function(){
         }
         return randomPassword
     }
-    document.getElementById("secound-Btn").textContent = getRandomPassword()
+    secoundBtn.textContent = getRandomPassword()
     document.getElementById("third-Btn").textContent = getRandomPassword()
 })
 
-
+secoundBtn.addEventListener("click", () => {
+    const copiedPassword = secoundBtn.textContent
+    navigator.clipboard.writeText(copiedPassword)     
+    secoundBtn.classList.add("button-clicked")
+    setTimeout(() => {
+        secoundBtn.classList.remove("button-clicked")
+    },500)
+})
 
 
 
