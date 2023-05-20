@@ -2,9 +2,11 @@ const allCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 "/"];
 
 const passwordLength = 12
+const firstBtn = document.getElementById("gen-btn")
 const secoundBtn = document.getElementById("secound-Btn")
+const thirdBtn = document.getElementById("third-Btn")
 
-document.getElementById("gen-btn").addEventListener("click", () => {
+firstBtn.addEventListener("click", () => {
     function getRandomCharacter(){
         let randomCharacter = Math.floor(Math.random()* allCharacters.length)
         return allCharacters [randomCharacter]
@@ -17,18 +19,27 @@ document.getElementById("gen-btn").addEventListener("click", () => {
         return randomPassword
     }
     secoundBtn.textContent = getRandomPassword()
-    document.getElementById("third-Btn").textContent = getRandomPassword()
+    thirdBtn.textContent = getRandomPassword()
+    createAnimation(firstBtn)
 })
 
 secoundBtn.addEventListener("click", () => {
-    const copiedPassword = secoundBtn.textContent
-    navigator.clipboard.writeText(copiedPassword)     
-    secoundBtn.classList.add("button-clicked")
-    setTimeout(() => {
-        secoundBtn.classList.remove("button-clicked")
-    },500)
+    const firstCopiedPassword = secoundBtn.textContent
+    navigator.clipboard.writeText(firstCopiedPassword)     
+    createAnimation(secoundBtn)
+
+})
+
+thirdBtn.addEventListener("click", () => {
+    const secoundCopiedPassword = thirdBtn.textContent
+    navigator.clipboard.writeText(secoundCopiedPassword)     
+    createAnimation(thirdBtn)
 })
 
 
-
-
+function createAnimation(btn) {
+    btn.classList.add("button-clicked")
+    setTimeout(() => {
+        btn.classList.remove("button-clicked")
+    },350)
+}
