@@ -14,8 +14,6 @@ body{
     background: #9161a08c;
     padding-top: 30px;
     padding-bottom: 69px;
-    
-    
 }
 
 hr{
@@ -56,26 +54,45 @@ button{
     font-weight: bold;
     border: none;
     cursor: pointer;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards;
 }
 
-#secound-Btn, #third-Btn{
+#second-Btn, 
+#third-Btn{
     background-color:rgba(255, 255, 255, 0.897);
     color: #9161a0;
     border: none;
     margin-right: 8px;
     margin-left: 8px;
-    padding: 12px 50px ;
-    
+    padding: 12px 50px;
+}
+
+#second-Btn{
+    position: relative;
 }
 
 @keyframes buttonAnimation {
     0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+    50% { transform: scale(1.1); }
     100% { transform: scale(1); }
   }
   
   .button-clicked {
     animation-name: buttonAnimation;
   }
+
+
+
+#second-checkmark {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+  
+#first-checkmark{
+    width: 12px;
+    height: 12px;
+}
