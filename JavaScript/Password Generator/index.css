@@ -63,14 +63,10 @@ button{
     background-color:rgba(255, 255, 255, 0.897);
     color: #9161a0;
     border: none;
-    margin-right: 8px;
-    margin-left: 8px;
+    margin: 0px 8px;
     padding: 12px 50px;
 }
 
-#second-Btn{
-    position: relative;
-}
 
 @keyframes buttonAnimation {
     0% { transform: scale(1); }
@@ -88,11 +84,28 @@ button{
     width: 12px;
     height: 12px;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 5.5px;
+    right: 13.5px;
 }
   
 #first-checkmark{
     width: 12px;
     height: 12px;
+    position: absolute;
+    top: 5.5px;
+    right: 13.5px;
+}
+
+.first-div{
+    display: inline-block;
+    position: relative;
+}
+
+.second-div{
+    display: inline-block;
+    position: relative;
+}
+
+.hidden{
+    display: none;
 }

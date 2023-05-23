@@ -3,8 +3,11 @@ const allCharacters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N",
 
 const passwordLength = 12
 const firstBtn = document.getElementById("gen-btn")
-const secoundBtn = document.getElementById("secound-Btn")
+const secoundBtn = document.getElementById("second-Btn")
 const thirdBtn = document.getElementById("third-Btn")
+const firstCheckMark = document.getElementById("first-checkmark")
+const secondCheckMark = document.getElementById("second-checkmark")
+
 
 firstBtn.addEventListener("click", () => {
     function getRandomCharacter(){
@@ -20,19 +23,26 @@ firstBtn.addEventListener("click", () => {
     }
     secoundBtn.textContent = getRandomPassword()
     thirdBtn.textContent = getRandomPassword()
+    firstCheckMark.classList.add("hidden")
+    secondCheckMark.classList.add("hidden")
     createAnimation(firstBtn)
 })
 
 secoundBtn.addEventListener("click", () => {
     const firstCopiedPassword = secoundBtn.textContent
     navigator.clipboard.writeText(firstCopiedPassword)     
+    firstCheckMark.classList.remove("hidden")
+    secondCheckMark.classList.add("hidden")
     createAnimation(secoundBtn)
+
 
 })
 
 thirdBtn.addEventListener("click", () => {
     const secoundCopiedPassword = thirdBtn.textContent
-    navigator.clipboard.writeText(secoundCopiedPassword)     
+    navigator.clipboard.writeText(secoundCopiedPassword)   
+    secondCheckMark.classList.remove("hidden")
+    firstCheckMark.classList.add("hidden")
     createAnimation(thirdBtn)
 })
 
