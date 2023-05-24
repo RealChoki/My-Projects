@@ -4,33 +4,29 @@
 1 kilogram = 2.204 pound
 */
 
-let volume = document.getElementById("vlm")
-let mass = document.getElementById("mass")
-let length = document.getElementById("lgth")
-const convert = document.getElementById("convert-btn")
-let inputField =document.getElementById("input-fld")
+const inputField = document.getElementById("input-fld")
 
-convert.addEventListener("click",function(){
-    let calcfeet = inputField.value * 3.281
-    let calcmeters = inputField.value / 3.281
+document.getElementById("convert-btn").addEventListener("click",function(){
+    const calcfeet = inputField.value * 3.281
+    const calcmeters = inputField.value / 3.281
 
-    let calcgallons = inputField.value * 0.264
-    let calcliters = inputField.value / 0.264
+    const calcgallons = inputField.value * 0.264
+    const calcliters = inputField.value / 0.264
 
-    let calcpounds = inputField.value * 2.204
-    let calcmkilos = inputField.value / 2.204
+    const calcpounds = inputField.value * 2.204
+    const calcmkilos = inputField.value / 2.204
     
-    length.textContent = `
-        ${inputField.value} meters = ${calcfeet.toFixed(3)} feet |
-        ${inputField.value} feet = ${calcmeters.toFixed(3)} meters
+    document.getElementById("lgth").textContent = `
+        ${inputField.value} meters = ${calcfeet.toFixed(2)} feet |
+        ${inputField.value} feet = ${calcmeters.toFixed(2)} meters
     `
-    volume.textContent = `
-        ${inputField.value} liters = ${calcgallons.toFixed(3)} gallons |
-        ${inputField.value} gallons = ${calcliters.toFixed(3)} liters
+    document.getElementById("vlm").textContent = `
+        ${inputField.value} liters = ${calcgallons.toFixed(2)} gallons |
+        ${inputField.value} gallons = ${calcliters.toFixed(2)} liters
     `
-    mass.textContent = `
-        ${inputField.value} kilos = ${calcpounds.toFixed(3)} pounds |
-        ${inputField.value} pounds = ${calcmkilos.toFixed(3)} kilos
+    document.getElementById("mass").textContent = `
+        ${inputField.value} kilos = ${calcpounds.toFixed(2)} pounds |
+        ${inputField.value} pounds = ${calcmkilos.toFixed(2)} kilos
     `
 })
 
