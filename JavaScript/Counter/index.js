@@ -6,12 +6,11 @@ document.getElementById("increment-btn").addEventListener("click",()=>{
 }) 
 
 document.getElementById("save-btn").addEventListener("click",()=>{
-    let saveEl = document.getElementById("save-el")
-    const countStr = count
-    if( saveEl.textContent === "Previous amount of dicks sucked:"){
-        saveEl.textContent += ` ${countStr} `
+    const saveEl = document.getElementById("save-el")
+    if( saveEl.textContent == "Previous amount of people:"){
+        saveEl.textContent += ` ${count} `
     } else{
-        saveEl.textContent += `- ${countStr} `
+        saveEl.textContent += `- ${count} `
     }
     document.getElementById("count-el").textContent = 0
     count = 0
