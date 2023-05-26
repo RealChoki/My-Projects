@@ -97,7 +97,7 @@ feed.addEventListener("click", (e) => {
     <h1 class="false">Your watchlist is looking a little empty...</h1>
     <div class="go-add-movies">
         <img id="add-movie" src="images/plus.png">
-        <h2>Let’s add some movies!</h2>
+        <h2 class="go">Let’s add some movies!</h2>
     </div>
     `: null
 })

@@ -208,6 +208,10 @@ h2{
     display: inline;
 }
 
+.go{
+    min-width: 162px;
+}
+
 @media (min-width: 1000px){
     .first h3,
     .secound h5,
@@ -220,7 +224,7 @@ h2{
         margin-top: 10px;
     }
 
-    #add-btn{
+    #add-btn, #delete-btn{
         margin-top: 10px;
     }
     
