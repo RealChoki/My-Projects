@@ -91,6 +91,9 @@ section {
     color: #252525;
 }
 
+.here:hover{
+    color: #fff;
+}
 .btn {
     display: inline-block;
     color: #252525;
