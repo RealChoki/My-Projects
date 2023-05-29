@@ -12,14 +12,12 @@ document.getElementById("search-btn").addEventListener("click", () => {
     fetch(`${fetchLink}s=${document.getElementById("search-field").value}`)
         .then(res => res.json())
         .then(data => {
-            data.Response == "False" ? feed.innerHTML = `<h1 class="false">Unable to find what you’re looking for. Please try another search.</h1>` : 
-            console.log(data)
+            data.Response == "False" ? feed.innerHTML = `<h1 class="false">Unable to find what you’re looking for. Please try another search.</h1>` : null
             for (let i = 0; i < data.Search.length; i++) {
-                const imdbID = data.Search[i].imdbID
+                const imdbID = data.Search[i].imdbID;
                 fetch(`${fetchLink}i=${imdbID}`)
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
                         const { Poster, Title, Plot, Genre, Runtime, imdbRating } = data
                         feed.innerHTML += `
                             <div class="movie">
@@ -109,14 +107,13 @@ feed.addEventListener("click", (e) => {
 feed.addEventListener("click", (e) => {
     if (e.target.id == "add-btn") {
         const movieElement = e.target.closest(".movie")
-        const movieElSelector = movieElement.querySelector
         const movie = {
-            title: movieElSelector("h3").textContent,
-            poster: movieElSelector(".poster").src,
-            plot: movieElSelector(".plot").textContent,
-            rating: movieElSelector("h6").textContent,
-            runtime: movieElSelector(".run-time").textContent,
-            genre: movieElSelector(".genre").textContent
+            title: movieElement.querySelector("h3").textContent,
+            poster: movieElement.querySelector(".poster").src,
+            plot: movieElement.querySelector(".plot").textContent,
+            rating: movieElement.querySelector("h6").textContent,
+            runtime: movieElement.querySelector(".run-time").textContent,
+            genre: movieElement.querySelector(".genre").textContent
         }
         listOfMovies.push(movie)
     }
