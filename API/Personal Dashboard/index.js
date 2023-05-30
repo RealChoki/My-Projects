@@ -1,4 +1,4 @@
-fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
+fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=japan")
     .then(res => res.json())
     .then(data => {
         document.body.style.backgroundImage = `url(${data.urls.regular})`
@@ -33,7 +33,7 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
 
 function getCurrentTime() {
     const date = new Date()
-    document.getElementById("time").textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+    document.getElementById("time").textContent = date.toLocaleTimeString("eu-de", {timeStyle: "short"})
 }
 
 setInterval(getCurrentTime, 1000)
