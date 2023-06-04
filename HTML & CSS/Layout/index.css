@@ -4,6 +4,9 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    min-width: 825px;
+    position: relative;
+    overflow: hidden;
 }
 
 body {
@@ -11,8 +14,8 @@ body {
     display: grid;
     align-items: center;
     background: linear-gradient(322deg, rgba(43,46,39,1) 29%, rgba(28,28,28,1) 29%, rgba(28,28,28,1) 40%, rgba(43,46,39,1) 40%, rgba(43,46,39,1) 48%, rgba(28,28,28,1) 48%, rgba(28,28,28,1) 92%, rgba(113,174,33,1) 92%, rgba(113,174,33,1) 100%);
-
     color: white;
+    
 }
 
 .container {
@@ -53,9 +56,9 @@ body::before{
     height: 100vh;
     font-size: 8rem;
     z-index: -1;
-    left: 43.5%;
+    left: 58%;
     top: 30%;
-    transform: rotate(-38deg);
+    transform: rotate(-39deg);
 }
 
 body::after {
@@ -65,10 +68,58 @@ body::after {
     height: 100vh;
     font-size: 8rem;
     z-index: -1;
-    left: 55%;
+    left: 72.4%;
     top: 50%;
-    transform: rotate(-38deg);
+    transform: rotate(-40deg);
 }
+
+@media (max-width: 950px) {
+    body::before{
+        left: 66%;
+    }
+    body::after{
+        left: 74%;
+    }
+  }
+
+  @media (min-width: 950px) and (max-width: 1080px) {
+    body::before{
+        left: 63.5%;
+    }
+    
+  }
+
+  @media (min-width: 1081px) and (max-width: 1200px) {
+    body::before{
+        left: 63%;
+    }
+    
+  }
+
+  @media (min-width: 1201px) and (max-width: 1350px) {
+    body::before{
+        left: 61.4%;
+    }
+    
+  }
+
+  @media (min-width: 1351px) and (max-width: 1450px){
+    body::before{
+        left: 60.4%;
+    }
+    
+  }
+
+  @media (min-width: 1850px) and (max-width: 1940px){
+    body::before{
+        left: 58%;
+    }
+    
+  }
+
+
+
+ 
 
 
 /*
