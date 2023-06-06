@@ -6,6 +6,13 @@ const title = document.getElementById("title")
 const search = document.querySelector(".search")
 let listOfMovies = []
 
+window.addEventListener("DOMContentLoaded", () => {
+    const storedMovies = localStorage.getItem("watchlist");
+    if (storedMovies) {
+        listOfMovies = JSON.parse(storedMovies);
+    }
+})
+
 document.getElementById("search-btn").addEventListener("click", () => {
     searchPlaceHolder.classList.add("hide")
     feed.innerHTML = ""
@@ -50,7 +57,8 @@ document.getElementById("search-btn").addEventListener("click", () => {
 watchList.addEventListener("click", () => {
     watchList.textContent = "Search for movies"
     title.textContent = "My Watchlist"
-    search.classList.add("hide")
+    searchPlaceHolder.classList.add("hide")
+    search.classList.add("hide")    
     feed.innerHTML = ""
     for (let i = 0; i < listOfMovies.length; i++) {
         const {poster, title, plot, rating, runtime, genre} = listOfMovies[i]
@@ -87,6 +95,7 @@ feed.addEventListener("click", (e) => {
         const movieTitle = movieElement.querySelector("h3").textContent
         listOfMovies = listOfMovies.filter(movie => movie.title !== movieTitle)
         movieElement.remove()
+        localStorage.setItem("watchlist", JSON.stringify(listOfMovies));
     }else if (e.target.id == "add-movie"){
         feed.innerHTML = ""
         watchList.textContent = "my Watchlist"
@@ -116,6 +125,7 @@ feed.addEventListener("click", (e) => {
             genre: movieElement.querySelector(".genre").textContent
         }
         listOfMovies.push(movie)
+        localStorage.setItem("watchlist", JSON.stringify(listOfMovies));
     }
 })
 

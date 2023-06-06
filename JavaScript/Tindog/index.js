@@ -41,8 +41,8 @@ function render() {
     document.getElementById('feed').innerHTML = teddy.getDogHtml()
 }
 
-actOnBtnPress("like", "likepop")
-actOnBtnPress("dislike", "dislikepop")
+actOnBtnPress("like", "like-pop")
+actOnBtnPress("dislike", "dislike-pop")
 
 let teddy = new dog(getNewDog())
 
