@@ -111,7 +111,7 @@ public class Hangman {
 
     private static void printHangman(int wrongTurns) {
         // Remove this placeholder once there is a real hangman graphic:
-scanLetterChar()
+
         // TODO: Task 2.1) Print a hangman graphic based on the current number of wrong turns
 
         // TODO: Task 2.2) Add valid Javadoc for this method. As - due to your valuable contribution - there are multiple
