@@ -14,31 +14,46 @@ public class Hangman {
     public static void main(String[] args) {
         mainMenu();
     }
-
+    /**
+    Displays the main menu for the Hangman game and handles user input for menu options.
+    Tracks the number of wins and losses throughout the games.
+    @author Rafaat Choki
+    */
     private static void mainMenu() {
-        runGame();
+        boolean isRunning = true;
+        int wins = 0;
+        int losses = 0;
 
-        // TODO: Task 1.1) Add main menu (loop)
-        //  - Input "p" => play (new game)
-        //  - Input "h" => help (print list of commands ("p", "h", and "q"))
-        //  - Input "q" => Quit/Exit
-        //  - Any other input (Invalid) => Print "Invalid input <input>" + help menu (list of commands as if input was "h")
+        System.out.println("Welcome to Hangman !!");
+        mainMenuOptions();
+        
+        while (isRunning){
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
 
-        // TODO: Task 1.2) Manage statistics, i.e., store wins and losses, count the respective nr up after each game
-        //  and show the total after each game. For example: Wins: 3, losses: 1.
+            switch (input){
+                case "p":
+                    boolean isGameWon = runGame();
+                    if (isGameWon){
+                        wins++;
+                    } else {
+                        losses++;
+                    }
+                    System.out.println("Wins: " + wins + ", " + "Losses: " + losses);
+                    break;
+                case "q":
+                    isRunning = false;
+                    break;
+                case "h":
+                    listOfCommands();
+                    break;
+                default:
+                    System.out.println("Invalid input '" + input + "'");
+                    listOfCommands();
+            }
 
-        // TODO: Task 1.3) Add valid Javadoc for this method (and any method you have added). As - due to your valuable contribution - there are multiple
-        //  collaborators working on this project, please don't forget to use the tag @author <Your name> (see other methods)
+        }
 
-        // - You are allowed to change this method body and add as many new methods as you want (please don't forget to describe them with Javadoc as described in task 1.3).
-        // - You MUST NOT change any of the preexisting methods or head of this method.
-        // - Please have a look at the existing code -- if possible, call/use methods we have already implemented.
-        // - After implementing your features, you may remove all these comments and TODOs.
-
-        // Checklist:
-        // - [ ] Implementation of main menu (task 1.1 -- 1 point)
-        // - [ ] Implementation of statistics (task 1.2 -- 0.5 points)
-        // - [ ] Javadoc describing your new feature(s) + @author tag (task 1.3 -- 0.5 points)
     }
 
     /**
@@ -48,17 +63,8 @@ public class Hangman {
      * @author Team Prog1
      */
     private static boolean runGame() {
-        String[] hangManArt = {
-            "        +---+\n        |   |\n            |\n            |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n            |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n        |   |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|   |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|\\  |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|\\  |\n       /    |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|\\  |\n       / \\  |\n            |\n      ========="
-        };
         final String randomWord = randomWord();
-        final int maxWrongTurns = 6;
+        final int maxWrongTurns = 5;
         int wrongTurns = 0;
         int foundCharacters = 0;
         String history = "";
@@ -83,15 +89,42 @@ public class Hangman {
                 }
             } else {
                 wrongTurns++;
-                System.out.println(hangManArt[wrongTurns]);
+                printHangman(wrongTurns);
             }
 
         }
 
         boolean isGameWon = foundCharacters == wordLetters.length;
         System.out.print("You " + (isGameWon ? "won" : "lost") + " this round! Word was: " + randomWord + "\n");
+        mainMenuOptions();
         return isGameWon;
+        
     }
+
+    /**
+    Displays the main menu options for the game.
+    The user can start/quit the game, or seek help.
+    @author Rafaat Choki
+    */
+    private static void mainMenuOptions() {
+        System.out.println("Do you want to start a new game (: --->    Press 'p'");
+        System.out.println("Do you want to quit the game ): --->    Press 'q'");
+        System.out.println("Do you need help O_o --->    Press 'h'");
+    }
+
+    /**
+    Displays a list of all the available commands.
+    Each command is described along with its corresponding key.
+    @author Rafaat Choki
+    */
+    private static void listOfCommands(){
+        System.out.println("Here is a list of all the commands:");
+        System.out.println("'p' ---> stands for (Play) - Starts new game");
+        System.out.println("'q' ---> stands for (Quit) - Ends the game");
+        System.out.println("'h' ---> stands for (Help) - lists all commands");
+    }
+    
+    
 
     /**
      * Prints the information of a current Hangman round, i.e., the nr. of wrong turns and the currently visible
@@ -106,25 +139,24 @@ public class Hangman {
         System.out.print("Word: ");
         System.out.print(word);
         System.out.println(" (Wrong turns: " + wrongTurns + "/" + maxWrongTurns + ")");
-        printHangman(wrongTurns);
+        
     }
 
-    private static void printHangman(int wrongTurns) {
-        // Remove this placeholder once there is a real hangman graphic:
-
-        // TODO: Task 2.1) Print a hangman graphic based on the current number of wrong turns
-
-        // TODO: Task 2.2) Add valid Javadoc for this method. As - due to your valuable contribution - there are multiple
-        //  collaborators working on this project, please don't forget to use the tag @author <Your name> (see other methods)
-
-        // - Feel free to work in this method and add new methods (which shouldn't be necessary in this case).
-        // - You MUST NOT change any of the preexisting methods or this method head.
-        // - Inspiration: ASCII-Art => https://www.asciiart.eu/
-        // - After implementing your features, you may remove all these comments and TODOs.
-
-        // Checklist:
-        // - [ ] Hangman graphic (task 2.1 -- 1.5 point)
-        // - [ ] Javadoc describing your new feature(s) + @author tag (task 2.2 -- 0.5 points)
+    /**
+     * Prints a visual representation of the hangman based on the number of wrong turns.
+     * @param wrongTurns The number of wrong turns made in the game.
+     * @author Rafaat Choki
+     */
+    private static void printHangman(int wrongTurns) { 
+        String[] hangManArt = {
+                "        +---+\n        |   |\n            |\n            |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n        |   |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|   |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|\\  |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|\\  |\n       /    |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|\\  |\n       / \\  |\n            |\n      ========="
+        };
+        System.out.println(hangManArt[wrongTurns]); 
     }
 
     /**
