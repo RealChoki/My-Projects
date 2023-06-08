@@ -39,8 +39,10 @@ public class Hangman {
                     boolean isGameWon = runGame();
                     if (isGameWon) {
                         wins++;
+                        mainMenuOptions();
                     } else {
                         losses++;
+                        mainMenuOptions();
                     }
                     System.out.println("Wins: " + wins + ", " + "Losses: " + losses);
                     break;
@@ -100,9 +102,7 @@ public class Hangman {
 
         boolean isGameWon = foundCharacters == wordLetters.length;
         System.out.print("You " + (isGameWon ? "won" : "lost") + " this round! Word was: " + randomWord + "\n");
-        mainMenuOptions();
         return isGameWon;
-
     }
 
     /**
