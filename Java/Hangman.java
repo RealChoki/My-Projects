@@ -15,50 +15,62 @@ public class Hangman {
         mainMenu();
     }
 
+    /**
+     * Displays the main menu for the Hangman game and handles user input for menu
+     * options.
+     * Tracks the number of wins and losses throughout the games.
+     * 
+     * @author Rafaat Choki
+     */
     private static void mainMenu() {
-        runGame();
+        boolean isRunning = true;
+        int wins = 0;
+        int losses = 0;
 
-        // TODO: Task 1.1) Add main menu (loop)
-        //  - Input "p" => play (new game)
-        //  - Input "h" => help (print list of commands ("p", "h", and "q"))
-        //  - Input "q" => Quit/Exit
-        //  - Any other input (Invalid) => Print "Invalid input <input>" + help menu (list of commands as if input was "h")
+        System.out.println("Welcome to Hangman !!");
+        mainMenuOptions();
 
-        // TODO: Task 1.2) Manage statistics, i.e., store wins and losses, count the respective nr up after each game
-        //  and show the total after each game. For example: Wins: 3, losses: 1.
+        while (isRunning) {
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.nextLine();
 
-        // TODO: Task 1.3) Add valid Javadoc for this method (and any method you have added). As - due to your valuable contribution - there are multiple
-        //  collaborators working on this project, please don't forget to use the tag @author <Your name> (see other methods)
+            switch (input) {
+                case "p":
+                    boolean isGameWon = runGame();
+                    if (isGameWon) {
+                        wins++;
+                        mainMenuOptions();
+                    } else {
+                        losses++;
+                        mainMenuOptions();
+                    }
+                    System.out.println("Wins: " + wins + ", " + "Losses: " + losses);
+                    break;
+                case "q":
+                    isRunning = false;
+                    break;
+                case "h":
+                    listOfCommands();
+                    break;
+                default:
+                    System.out.println("Invalid input '" + input + "'");
+                    listOfCommands();
+            }
 
-        // - You are allowed to change this method body and add as many new methods as you want (please don't forget to describe them with Javadoc as described in task 1.3).
-        // - You MUST NOT change any of the preexisting methods or head of this method.
-        // - Please have a look at the existing code -- if possible, call/use methods we have already implemented.
-        // - After implementing your features, you may remove all these comments and TODOs.
+        }
 
-        // Checklist:
-        // - [ ] Implementation of main menu (task 1.1 -- 1 point)
-        // - [ ] Implementation of statistics (task 1.2 -- 0.5 points)
-        // - [ ] Javadoc describing your new feature(s) + @author tag (task 1.3 -- 0.5 points)
     }
 
     /**
-     * Runs a game of Hangman and returns whether this game was lost or won by the user.
+     * Runs a game of Hangman and returns whether this game was lost or won by the
+     * user.
      *
      * @return True if the game was won, false if not.
      * @author Team Prog1
      */
     private static boolean runGame() {
-        String[] hangManArt = {
-            "        +---+\n        |   |\n            |\n            |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n            |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n        |   |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|   |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|\\  |\n            |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|\\  |\n       /    |\n            |\n      =========",
-            "        +---+\n        |   |\n        O   |\n       /|\\  |\n       / \\  |\n            |\n      ========="
-        };
         final String randomWord = randomWord();
-        final int maxWrongTurns = 6;
+        final int maxWrongTurns = 5;
         int wrongTurns = 0;
         int foundCharacters = 0;
         String history = "";
@@ -83,7 +95,7 @@ public class Hangman {
                 }
             } else {
                 wrongTurns++;
-                System.out.println(hangManArt[wrongTurns]);
+                printHangman(wrongTurns);
             }
 
         }
@@ -94,10 +106,37 @@ public class Hangman {
     }
 
     /**
-     * Prints the information of a current Hangman round, i.e., the nr. of wrong turns and the currently visible
+     * Displays the main menu options for the game.
+     * The user can start/quit the game, or seek help.
+     * 
+     * @author Rafaat Choki
+     */
+    private static void mainMenuOptions() {
+        System.out.println("Do you want to start a new game (: --->    Press 'p'");
+        System.out.println("Do you want to quit the game ): --->    Press 'q'");
+        System.out.println("Do you need help O_o --->    Press 'h'");
+    }
+
+    /**
+     * Displays a list of all the available commands.
+     * Each command is described along with its corresponding key.
+     * 
+     * @author Rafaat Choki
+     */
+    private static void listOfCommands() {
+        System.out.println("Here is a list of all the commands:");
+        System.out.println("'p' ---> stands for (Play) - Starts new game");
+        System.out.println("'q' ---> stands for (Quit) - Ends the game");
+        System.out.println("'h' ---> stands for (Help) - lists all commands");
+    }
+
+    /**
+     * Prints the information of a current Hangman round, i.e., the nr. of wrong
+     * turns and the currently visible
      * word/underscores for letters yet to be guessed.
      *
-     * @param word          (Partly hidden) word whose letters are to be guessed represented as char array.
+     * @param word          (Partly hidden) word whose letters are to be guessed
+     *                      represented as char array.
      * @param wrongTurns    Nr. of wrong turns for a current game.
      * @param maxWrongTurns Max nr. of wrong turns.
      * @author Team Prog1
@@ -106,31 +145,33 @@ public class Hangman {
         System.out.print("Word: ");
         System.out.print(word);
         System.out.println(" (Wrong turns: " + wrongTurns + "/" + maxWrongTurns + ")");
-        printHangman(wrongTurns);
-    }
 
-    private static void printHangman(int wrongTurns) {
-        // Remove this placeholder once there is a real hangman graphic:
-
-        // TODO: Task 2.1) Print a hangman graphic based on the current number of wrong turns
-
-        // TODO: Task 2.2) Add valid Javadoc for this method. As - due to your valuable contribution - there are multiple
-        //  collaborators working on this project, please don't forget to use the tag @author <Your name> (see other methods)
-
-        // - Feel free to work in this method and add new methods (which shouldn't be necessary in this case).
-        // - You MUST NOT change any of the preexisting methods or this method head.
-        // - Inspiration: ASCII-Art => https://www.asciiart.eu/
-        // - After implementing your features, you may remove all these comments and TODOs.
-
-        // Checklist:
-        // - [ ] Hangman graphic (task 2.1 -- 1.5 point)
-        // - [ ] Javadoc describing your new feature(s) + @author tag (task 2.2 -- 0.5 points)
     }
 
     /**
-     * Checks whether a character (needle) exists in an array of characters (haystack).
+     * Prints a visual representation of the hangman based on the number of wrong
+     * turns.
+     * 
+     * @param wrongTurns The number of wrong turns made in the game.
+     * @author Rafaat Choki
+     */
+    private static void printHangman(int wrongTurns) {
+        String[] hangManArt = {
+                "        +---+\n        |   |\n            |\n            |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n        |   |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|   |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|\\  |\n            |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|\\  |\n       /    |\n            |\n      =========",
+                "        +---+\n        |   |\n        O   |\n       /|\\  |\n       / \\  |\n            |\n      ========="
+        };
+        System.out.println(hangManArt[wrongTurns]);
+    }
+
+    /**
+     * Checks whether a character (needle) exists in an array of characters
+     * (haystack).
      *
-     * @param needle Character to be looked for.
+     * @param needle   Character to be looked for.
      * @param haystack Array of characters to search in.
      * @return True if the given character was found in the array, false if not.
      * @author Team Prog1
@@ -145,7 +186,8 @@ public class Hangman {
     }
 
     /**
-     * Scans user input until obtaining exactly one letter and returns it converted to uppercase.
+     * Scans user input until obtaining exactly one letter and returns it converted
+     * to uppercase.
      *
      * @return Legal user input character, i.e., a letter, in uppercase.
      * @author Team Prog1
@@ -180,7 +222,8 @@ public class Hangman {
     }
 
     /**
-     * Initializes a character array with a given length, fills it with underscores and returns it.
+     * Initializes a character array with a given length, fills it with underscores
+     * and returns it.
      *
      * @param length Length of the array to be created.
      * @return Character array of the given length, filled with underscores.
@@ -195,7 +238,8 @@ public class Hangman {
     }
 
     /**
-     * Selects and returns a random uppercase word from a list of programming/uni related words.
+     * Selects and returns a random uppercase word from a list of programming/uni
+     * related words.
      *
      * @return Random uppercase word related to programming / uni.
      * @author Team Prog1
@@ -224,3 +268,6 @@ public class Hangman {
         return words[(int) (Math.random() * words.length)];
     }
 }
+
+// ASCII ART source:
+// https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
