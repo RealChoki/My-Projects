@@ -19,14 +19,14 @@ public class Team{
     }
 
     public static void getTeamCounter(int teamCounter){
-
+        teamCounter++;
     }
 
     public void addScore(int score){
         this.score += score;
     }
 
-    
+
 }
 
 
