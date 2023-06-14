@@ -56,7 +56,7 @@ public class Tournament {
 
     public void playChampionship(){
         for (int i = 0; i < teams.length; i++){
-            for (int j = teams.length; j > 0; i--){
+            for (int j = teams.length; j > 0; j--){
                 playGame(teams[i], teams[j]);
 
                 if(teams[i].getScore() > teams[j].getScore()){
@@ -68,8 +68,38 @@ public class Tournament {
         }
     }
 
-    public void printScore(){
-        if()
+    public void printScore() {
+        if (getGameCount() == 0) {
+            System.out.println("Bisher fand kein Spiel statt.");
+        } else {
+            // Sort teams array in descending order based on scores using bubble sort algorithm
+            for (int i = 0; i < teams.length - 1; i++) {
+                for (int j = 0; j < teams.length - i - 1; j++) {
+                    if (teams[j].getScore() < teams[j + 1].getScore()) {
+                        Team temp = teams[j];
+                        teams[j] = teams[j + 1];
+                        teams[j + 1] = temp;
+                    }
+                }
+            }
+            
+            // Print team names and scores in descending order
+            for (Team team : teams) {
+                System.out.println(team.getTeamName() + ": " + team.getScore() + " Punkte");
+            }
+        }
+    }
+
+    public Team[] getWinner(){
+        if (getGameCount() == 0){
+            return new Team[0];
+        }else{
+            for (Team team : teams) {
+                if (team.getScore()) {
+                    
+                }
+            }
+        }
     }
 }
 /*
