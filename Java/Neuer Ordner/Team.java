@@ -1,3 +1,4 @@
+
 public class Team{
     final private String teamName;
     private int score;
@@ -6,8 +7,6 @@ public class Team{
     public Team(String teamName){
         this.teamName = teamName;
         this.teamCounter = teamCounter + 1;
-    
-        
     }
 
     public String getTeamName(){
@@ -25,13 +24,16 @@ public class Team{
     public void addScore(int score){
         this.score += score;
     }
-
+    
+    @Override
+    public String toString(){
+        return teamName + " " + score + " " + teamCounter; 
+    }
     
 }
 
 
 /*
-Für die Klasse Team soll die toString-Methode implementiert werden.
 Darüber hinaus erstelle bitte eine Klasse Tournament
 - mit einem Array teams vom Typ Team
 - mit einem Attribut gameCount vom Typ int
