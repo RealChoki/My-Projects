@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Tournament {
     private int gameCount;
     private Team[] teams;
@@ -69,37 +71,65 @@ public class Tournament {
     }
 
     public void printScore() {
-        if (getGameCount() == 0) {
-            System.out.println("Bisher fand kein Spiel statt.");
-        } else {
-            // Sort teams array in descending order based on scores using bubble sort algorithm
-            for (int i = 0; i < teams.length - 1; i++) {
-                for (int j = 0; j < teams.length - i - 1; j++) {
-                    if (teams[j].getScore() < teams[j + 1].getScore()) {
-                        Team temp = teams[j];
-                        teams[j] = teams[j + 1];
-                        teams[j + 1] = temp;
-                    }
-                }
-            }
-            
-            // Print team names and scores in descending order
-            for (Team team : teams) {
-                System.out.println(team.getTeamName() + ": " + team.getScore() + " Punkte");
+    if (gameCount == 0) {
+        System.out.println("Bisher fand kein Spiel statt.");
+        return;
+    }
+
+    Team[] sortedTeams = Arrays.copyOf(teams, teams.length);
+
+    // Bubble sort
+    for (int i = 0; i < sortedTeams.length - 1; i++) {
+        for (int j = 0; j < sortedTeams.length - i - 1; j++) {
+            if (sortedTeams[j].getScore() < sortedTeams[j + 1].getScore()) {
+                // Swap teams
+                Team temp = sortedTeams[j];
+                sortedTeams[j] = sortedTeams[j + 1];
+                sortedTeams[j + 1] = temp;
             }
         }
     }
 
-    public Team[] getWinner(){
-        if (getGameCount() == 0){
-            return new Team[0];
-        }else{
-            for (Team team : teams) {
-                if (team.getScore()) {
+    for (Team team : sortedTeams) {
+        System.out.println(team.getTeamName() + ": " + team.getScore());
+    }
+}
+
+//highscore, look how many have same highscore,  Winnercount goes up, inisilize list with winner count, put winners in list
+    public Team[] getWinner() {
+    if (getGameCount() == 0) {
+        return new Team[0];
+    } else {
+        int highScore = 0;
+        int winnerCount = 0;
+            for (int i = 0; i < teams.length; i++) {
+                int score = teams[i].getScore();
+
+                if (score >= teams[i+1].getScore()) {
+                    highScore = score;  
                     
+                }else{
+                    highScore = teams[i+1].getScore();
                 }
             }
+
+            for (int i = 0; i < teams.length; i++) {
+                if(teams[i].getScore() == highScore){
+                    winnerCount++;
+                }
+            }
+            Team[] winner = new Team[winnerCount];
+            int index = 0;
+            
+            for (int i = 0; i < teams.length; i++){
+                if (teams[i].getScore() == highScore){
+                    winner[index] = teams[i];
+                    index++;
+                }
+            }    
+            return winner;
         }
+    
     }
 }
 /*
