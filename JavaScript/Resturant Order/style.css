@@ -1,4 +1,4 @@
-body{
+body, html{
     color: #000000;
     background: whitesmoke;
     font-family: 'Smythe', cursive;
@@ -6,6 +6,8 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 header {
