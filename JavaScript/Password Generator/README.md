@@ -24,4 +24,4 @@ If you found an issue or would like to submit an improvement to this project, pl
 
 ## Like this project?
 
-If you are feeling generous, buy me a coffee! - "https://ko-fi.com/realchoki"
+If you are feeling generous, buy me a coffee! - https://ko-fi.com/realchoki
