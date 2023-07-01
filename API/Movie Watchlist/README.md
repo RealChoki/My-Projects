@@ -1,6 +1,6 @@
 # Movie Watchlist
 
-## A fully functional Movie Watchlist which utilizes an API to retrieve movies that can be added to a Watchlist. 
+## A fully functional Movie Watchlist site which utilizes an API to retrieve movies
 
 - The website is built using HTML, CSS, JavaScript, and an API for retrieving movie data.
 - Additionally, local storage will be utilized to store the user's watchlist, allowing them to add and remove movies as desired.
