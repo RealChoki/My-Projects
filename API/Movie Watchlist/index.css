@@ -212,6 +212,27 @@ h2{
     min-width: 162px;
 }
 
+#notify {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+    color: white;
+    font-size: 0.3rem;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 27px;
+    right: 0.1px;
+    display: none;
+  }
+  
+
+
+
 @media (min-width: 1000px){
     .first h3,
     .secound h5,

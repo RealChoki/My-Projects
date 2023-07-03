@@ -4,6 +4,8 @@ const fetchLink = "http://www.omdbapi.com/?apikey=a80cae51&"
 const searchPlaceHolder = document.querySelector(".placeholder-search")
 const title = document.getElementById("title")
 const search = document.querySelector(".search")
+const notification = document.getElementById("notify")
+
 let listOfMovies = []
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -95,8 +97,14 @@ feed.addEventListener("click", (e) => {
         const movieTitle = movieElement.querySelector("h3").textContent
         listOfMovies = listOfMovies.filter(movie => movie.title !== movieTitle)
         movieElement.remove()
-        localStorage.setItem("watchlist", JSON.stringify(listOfMovies));
-    }else if (e.target.id == "add-movie"){
+        localStorage.setItem("watchlist", JSON.stringify(listOfMovies))
+        if(listOfMovies.length == 0){
+            notification.style.display = "none"
+        }else{
+            notification.textContent = listOfMovies.length
+        }
+    }
+    if (e.target.id == "add-movie"){
         feed.innerHTML = ""
         watchList.textContent = "my Watchlist"
         title.textContent = "Find your film"
@@ -125,7 +133,9 @@ feed.addEventListener("click", (e) => {
             genre: movieElement.querySelector(".genre").textContent
         }
         listOfMovies.push(movie)
-        localStorage.setItem("watchlist", JSON.stringify(listOfMovies));
+        localStorage.setItem("watchlist", JSON.stringify(listOfMovies))
+        notification.style.display = "flex"
+        notification.textContent = listOfMovies.length
     }
 })
 
