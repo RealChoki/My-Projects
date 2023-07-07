@@ -60,3 +60,7 @@ p{
 section{
     display: flex;
 }
+
+select, .selected-color, button{
+    cursor: pointer;
+}
